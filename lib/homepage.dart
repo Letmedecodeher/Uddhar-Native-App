@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:uddhar_app/CommunityPage.dart';
+import 'package:uddhar_app/Incident.dart';
+import 'package:uddhar_app/LostFound.dart';
+import 'package:uddhar_app/SettingsPage.dart';
+import 'package:uddhar_app/ShelterInfo.dart';
 import 'NavBar.dart';
 import 'ProfilePage.dart';
 import 'EmergencyContactsPage.dart';
+import 'SOSPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,6 +27,12 @@ class _HomePageState extends State<HomePage> {
     'Safety Tips',
     'Resources',
     'Reports',
+  ];
+
+  final List<Widget> _pages = [
+    SettingsPage(),
+    HomePage(),
+    ProfilePage(),
   ];
 
   @override
@@ -51,11 +63,23 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             _buildCategoryContent(),
             const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                'Quick Actions',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
             _buildQuickActions(),
           ],
         ),
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(context),
+      //bottomNavigationBar: _buildBottomNavigationBar(context),
     );
   }
 
@@ -153,8 +177,25 @@ class _HomePageState extends State<HomePage> {
         _buildQuickAction(
           icon: Icons.book,
           label: 'Incident Reporting',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => IncidentReportingPage(),
+              ),
+            );
+          },
         ),
+        _buildQuickAction(icon: Icons.find_replace, label: 'Lost & Found', onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LostAndFoundPage(),
+              ),
+            );
+          }
+
+          ),
         _buildQuickAction(
           icon: Icons.phone,
           label: 'Emergency Contacts',
@@ -167,32 +208,35 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
-        _buildQuickAction(icon: Icons.map, label: 'Shelter Information', onTap: () {}),
-        _buildQuickAction(icon: Icons.payment, label: 'Donate Us', onTap: () {}),
+        _buildQuickAction(icon: Icons.map, label: 'Shelter Information', onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ShelterPage()
+            ),
+          );
+        },
+        ),
+        _buildQuickAction(
+          icon: Icons.sos,
+          label: 'SOS',
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SOSPage()),
+            );
+          },
+        ),
+        _buildQuickAction(icon: Icons.people, label: 'Community forum', onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CommunityForumPage()),
+          );
+        }),
+
       ],
     );
   }
 
-  Widget _buildBottomNavigationBar(BuildContext context) {
-    return CurvedNavigationBar(
-      backgroundColor: Colors.greenAccent,
-      color: Colors.green,
-      animationDuration: const Duration(milliseconds: 300),
-      items: const [
-        Icon(Icons.info, color: Colors.white),
-        Icon(Icons.home, color: Colors.white),
-        Icon(Icons.person, color: Colors.white),
-      ],
-      onTap: (index) {
-        if (index == 2) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ProfilePage()),
-          );
-        }
-      },
-    );
-  }
 
   Widget _buildQuickAction({
     required IconData icon,

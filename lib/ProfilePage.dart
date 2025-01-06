@@ -7,7 +7,7 @@ class ProfilePage extends StatelessWidget {
   final String address = "Kushtia, Khulna, Bangladesh";
   final String contact = "019*******5";
   final String profileImageUrl =
-      "https://scontent.fdac22-1.fna.fbcdn.net/v/t39.30808-6/470178434_2354847901530287_7108957599990460582_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGPiFyickHvauGfOmcBs4bPen3bWu0cGW56fdta7RwZbhb4h_FZ7I7MT_CLgAQktYquGf3QS-_iq4uU0EtiFE8X&_nc_ohc=GqOv6ZdorQAQ7kNvgHAkLOE&_nc_zt=23&_nc_ht=scontent.fdac22-1.fna&_nc_gid=AbnoeQTLsjzPF5dmpebR7da&oh=00_AYBeCy2V3OnEkE8sEGItGjIeNuIU4U4dKC8EyGpW7J_fFw&oe=67689CEF";
+      "https://scontent.fdac22-2.fna.fbcdn.net/v/t39.30808-6/470157621_2355513364797074_3375079922506928982_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGyPRLIERbEJAuORamo1-X8JfYywArPfa8l9jLACs99rwoMplwxHE9t4Tzw15bdKK0Swx8zr8N_PDom8_NTWerk&_nc_ohc=V5B7YzDqrZ8Q7kNvgHC6Dgp&_nc_zt=23&_nc_ht=scontent.fdac22-2.fna&_nc_gid=AAgh7AP1wZQVtyS3q-TCV-K&oh=00_AYAyHlW-dTOOaZZZ6DZysO6WkubvGZqbKaFQXx7BbD-Nyg&oe=67765B40";
   final String coverImageUrl =
       "https://img.freepik.com/free-vector/gradient-monochromatic-abstract-background_52683-74300.jpg";
 
