@@ -1,16 +1,19 @@
 # uddhar_app
 
-A new Flutter project.
+Developer Documentation:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tasks:
+User Authentication & Management
+🔹 handle user sign-up, login, and authentication securely.
+Incident reporting Management
+🔹 allow users to report incidents, view reported cases, and update statuses.
+Lost & Found Management
+🔹 allow users to report lost people, view reported cases, and update statuses.
+Shelter Information API
+🔹 provide shelter details and nearest shelters based on the user's location.
+Maps Integration
+🔹 integrate with GoMaps API(Or any other) to display map locations for missing persons and shelters.
+Push Notifications for Found Persons
+🔹 send notifications when a lost person is found.
+Admin Panel for Managing Reports
+🔹 provide admin functionalities to verify & approve reports.
