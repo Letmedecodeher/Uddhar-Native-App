@@ -9,9 +9,12 @@ import 'NavBar.dart';
 import 'ProfilePage.dart';
 import 'EmergencyContactsPage.dart';
 import 'SOSPage.dart';
+import 'package:uddhar_app/login_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final String token; // Token from login
+
+  const HomePage({super.key, required this.token});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -21,6 +24,29 @@ class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   String? selectedAlert;
 
+  @override
+  void initState() {
+    super.initState();
+
+    // If token is empty or invalid, redirect to login page
+    if (widget.token.isEmpty) {
+      Future.delayed(Duration.zero, () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      });
+    }
+  }
+
+  void logout() {
+    // Redirect to LoginPage on logout
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
+    );
+  }
+
   // Emergency Categories
   List<String> _categories = [
     'Disaster Alerts',
@@ -29,11 +55,7 @@ class _HomePageState extends State<HomePage> {
     'Reports',
   ];
 
-  final List<Widget> _pages = [
-    SettingsPage(),
-    HomePage(),
-    ProfilePage(),
-  ];
+
 
   @override
   Widget build(BuildContext context) {
