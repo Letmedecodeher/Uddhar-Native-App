@@ -32,6 +32,7 @@ For Profile page:
 For showing notifications:
 
 1.POST /subscribe: Save subscription.
+
 2.POST /send-notification: Send notifications.
 
 Login API:
