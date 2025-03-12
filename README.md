@@ -27,3 +27,12 @@ For Profile page:
 
 1. add profile picture
 2. Get profile picture
+
+
+For showing notifications:
+
+1.POST /subscribe: Save subscription.
+2.POST /send-notification: Send notifications.
+
+Login API:
+1. fasten the login process
